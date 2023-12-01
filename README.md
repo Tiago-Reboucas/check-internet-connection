@@ -53,7 +53,7 @@ In these moments you experience package loss and the '*ping*' tilt up, something
 
 It could be that the provider's signal was already coming with interference and no stability. At this point you think: "I'm going to write a program to check the '*ping*' every second and show a '*log*' of the date and time when the '*ping*' variation occurred", like any normal person would do. After showing the '*log*' to the technical support they say that they don't do any type of signal check in real time and that they couldn't do anything else for me... :neutral_face:
 
-So move on... cancel that contract and do it with a new provider :wink:
+So... move on... cancel that contract and do it with a new provider :wink:
 
 ### Functionality
 This program checks the '*ping*' every second and saves a '*log*' with date, time, location, ping and acceptance group information.
