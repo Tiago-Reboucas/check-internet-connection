@@ -39,7 +39,7 @@ Este programa verifica o '*ping*' a cada segundo e salva um '*log*' com as infor
 - Quando for identificado um valor acima do `threshold`, será exibido na tela a **data**, **hora** e o '***ping***';
 - Todos os dados serão salvos no formato: 'DataHora,Data,Hora,Local,Ping,Grupo' (para fácil uso em análise de dados).
 
-OBS: pressione <\Ctrl+C> para pausar.
+OBS: pressione <Ctrl+C> para pausar.
 
 ---
 
@@ -84,4 +84,4 @@ This program checks the '*ping*' every second and saves a '*log*' with date, tim
 - When a value above the `threshold` is identified, the **date**, **time** and '***ping***' will be displayed on the screen;
 - All data will be saved in the format: 'DateTime,Date,Time,Location,Ping,Group' (for easy use in data analysis).
 
-OBS: press <\Ctrl+C> to pause.
+OBS: press <Ctrl+C> to pause.
