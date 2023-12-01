@@ -58,6 +58,12 @@ So move on... cancel that contract and do it with a new provider :wink:
 ### Functionality
 This program checks the '*ping*' every second and saves a '*log*' with date, time, location, ping and acceptance group information.
 
+### Required modules
+- subprocess
+- time
+- datetime
+- signal
+
 ### How to use
 - Open `ping_checker.py` with your editor, you can edit from lines 9 to 16:
     - `lang`: program display language, `'en'` for English and `'br'` for Brazilian Portuguese;
