@@ -15,6 +15,12 @@ Foi triste... cancela esse contrato e faz com uma nova provedora :wink:
 ### Funcionalidade
 Este programa verifica o '*ping*' a cada segundo e salva um '*log*' com as informações de data, hora, local, ping e grupo de aceitação.
 
+### Módulos necessários
+- subprocess
+- time
+- datetime
+- signal
+
 ### Como usar
 - Abra com seu editor o `ping_checker.py`, das linhas 9 a 16 é onde você pode editar:
     - `lang`: língua de exibição do programa, `'en'` para Inglês e `'br'` para Português Brasileiro;
