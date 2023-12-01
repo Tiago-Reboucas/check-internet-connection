@@ -61,7 +61,7 @@ def save_log(group:str, value:int):
     write_data('\n{},{},{},{},{},{}'.format(now, date, hour, location, value, group))
 
     now, date, hour = time_now(lang)
-    
+
     if value == unreachable:
         if lang == 'br': print(f"{date} {hour} - Tempo limite esgotado ou não conseguiu chegar ao destino.")
         else: print(now + " - Timeout or destination unreachable.")
@@ -78,12 +78,6 @@ def ping(host:str, delay:float, threshold:int, lag:int):
     try:
         output = str(subprocess.check_output('ping -n 1 {}'.format(host), shell=True))[1:]
     except:
-        if lang == 'br': 
-            now, date, hour = time_now(lang)
-            print(f"{date} {hour} - Tempo limite esgotado ou não conseguiu chegar ao destino.")
-        else:
-            now, date, hour = time_now(lang)
-            print(now + " - Timeout or destination unreachable.")
         group = c
         value = unreachable
         save_log(group, value)
