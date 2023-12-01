@@ -28,7 +28,7 @@ Este programa verifica o '*ping*' a cada segundo e salva um '*log*' com as infor
     - `host`: website ou IP para testar o '*ping*' (deve ser um site com conexão confiável);
     - `delay`: tempo entre testes de '*ping* (segundos);
     - `threshold`: limite mínimo de aceitação de '*ping*';
-    - `lag`: limite máximo de aceitação de '*ping*' (valor do qual começa a apresentar lag);
+    - `lag`: limite máximo de aceitação de '*ping*' (valor em que começa a apresentar lag);
     - `unreachable`: valor para ser usado quando não conseguir alcançar o destino ou tempo limite excedido.
 
 - Depois de editado, rode `ping_checker.py`;
