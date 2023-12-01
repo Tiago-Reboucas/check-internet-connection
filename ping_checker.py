@@ -97,7 +97,6 @@ def ping(host:str, delay:float, threshold:int, lag:int):
         elif value > lag: group = b
     
     if value >= threshold:
-        # value = str(value)
         save_log(group, value)
 
     time.sleep(delay)
