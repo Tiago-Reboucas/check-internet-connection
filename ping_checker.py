@@ -6,7 +6,7 @@ import signal
 # ========================== EDIT HERE ==========================
 # English    - 'en'
 # Brasileiro - 'br'
-lang = 'br'
+lang = 'en'
 
 file_name = 'ping_log.csv' # File to be save in local drive
 host = '8.8.8.8'           # Website or ip to test your ping
@@ -54,15 +54,20 @@ def time_now(lang:str):
     return now, date, hour
 
 
-def save_log(group:str, value:str):
-    global location, lang
+def save_log(group:str, value:int):
+    global location, lang, unreachable
 
     now, date, hour = time_now('en')
     write_data('\n{},{},{},{},{},{}'.format(now, date, hour, location, value, group))
 
     now, date, hour = time_now(lang)
-    if lang == 'br': print('{} {} - Variação de ping : {}ms.'.format(date, hour, value))
-    else: print('{} - Ping variation: {}ms.'.format(now, value))
+    
+    if value == unreachable:
+        if lang == 'br': print(f"{date} {hour} - Tempo limite esgotado ou não conseguiu chegar ao destino.")
+        else: print(now + " - Timeout or destination unreachable.")
+    else:
+        if lang == 'br': print('{} {} - Variação de ping : {}ms.'.format(date, hour, value))
+        else: print('{} - Ping variation: {}ms.'.format(now, value))
 
 
 def ping(host:str, delay:float, threshold:int, lag:int):
@@ -75,10 +80,13 @@ def ping(host:str, delay:float, threshold:int, lag:int):
     except:
         if lang == 'br': 
             now, date, hour = time_now(lang)
-            print(f"{date} {hour} - Houve um erro na resposta do subprocesso.")
+            print(f"{date} {hour} - Tempo limite esgotado ou não conseguiu chegar ao destino.")
         else:
             now, date, hour = time_now(lang)
-            print(now + " - There was an error in the subprocess output.")
+            print(now + " - Timeout or destination unreachable.")
+        group = c
+        value = unreachable
+        save_log(group, value)
         time.sleep(delay)
         return
     
@@ -95,7 +103,7 @@ def ping(host:str, delay:float, threshold:int, lag:int):
         elif value > lag: group = b
     
     if value >= threshold:
-        value = str(value)
+        # value = str(value)
         save_log(group, value)
 
     time.sleep(delay)
